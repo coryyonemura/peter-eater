@@ -31,3 +31,10 @@ How to collaborate effectively! Got more acquainted with Git, and exposed to sev
 ## What's next for Peter Eater
 
 We are planning on implementing several features soon.
+
+* Calendar Archive: See past ratings and comments of any meal and compare the dining halls over time.
+
+* Image Upload: Upload pictures of your food with your ratings and comments.
+
+* Reactions and Voting: React to other students’ feedback with emojis and votes.
+

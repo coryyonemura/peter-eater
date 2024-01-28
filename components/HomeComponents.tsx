@@ -1,6 +1,6 @@
 import { Button, Text } from 'react-native'
 
-const HomeScreen = ({ navigation }: {navigation: any}) => {
+const HomeScreen = ({ navigation }: { navigation: any }) => {
     return (
         <Button
             title="Welcome"
@@ -10,8 +10,8 @@ const HomeScreen = ({ navigation }: {navigation: any}) => {
         />
     );
 };
-const ProfileScreen = ({ navigation, route }: {navigation: any, route: any}) => {
-    return <Text>This is {route.params.name}'s profile</Text>;
-};
+// const ProfileScreen = ({ navigation, route }: {navigation: any, route: any}) => {
+//     return <Text>This is {route.params.name}'s profile</Text>;
+// };
 
 export default HomeScreen;

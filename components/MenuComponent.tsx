@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
 import {
-    Dimensions,
-    FlatList,
     Text,
     View,
     ScrollView,
@@ -49,27 +47,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         justifyContent: 'center',
         flex: 1,
-        // borderColor: 'black',
         padding: 20,
         width: '40%',
         height: '50%',
         margin: 10,
-        // borderRadius: 8,
-        // backgroundColor: 'lightgrey',
     },
 })
-
-const fetchMenu = async () => {
-    try {
-        const response = await fetch(
-            'http://localhost:5000/receive_data'
-        );
-
-        return response.json();
-    } catch (error) {
-        console.error(error)
-    }
-}
 
 export function FoodDisplay({ foodName }: { foodName: string }) {
     return (
@@ -104,7 +87,7 @@ interface MenuItem {
 }
 
 
-export default function MenuComponent({ navigation }: {navigation: any}) {
+export default function MenuComponent({ navigation }: { navigation: any }) {
     const [menu, setMenu] = useState<MenuItem[]>([])
 
     useEffect(() => {
@@ -127,12 +110,12 @@ export default function MenuComponent({ navigation }: {navigation: any}) {
 
     return (
         <ScrollView>
-            <Button 
-            title="Rate"
-            onPress={() =>
-                navigation.navigate('Review', { name: 'Rate' })
-            }
-        />
+            <Button
+                title="Rate"
+                onPress={() =>
+                    navigation.navigate('Review', { name: 'Rate' })
+                }
+            />
             {menu.map((item) => <StationDisplay key={item.station} stationName={item.station} foods={item.foods} />)}
         </ScrollView>
     )

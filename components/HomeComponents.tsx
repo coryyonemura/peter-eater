@@ -1,4 +1,4 @@
-import { Button, Text } from 'react-native'
+import { Button } from 'react-native'
 
 const HomeScreen = ({ navigation }: { navigation: any }) => {
     return (
@@ -10,8 +10,5 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
         />
     );
 };
-// const ProfileScreen = ({ navigation, route }: {navigation: any, route: any}) => {
-//     return <Text>This is {route.params.name}'s profile</Text>;
-// };
 
 export default HomeScreen;

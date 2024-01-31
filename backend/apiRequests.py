@@ -9,9 +9,6 @@ CORS(app)
 def receive_data():
     try:
         # Make a request to get JSON data
-        # url = 'your_api_url_here'
-        # headers = {'Content-Type': 'application/json'}
-        # querystring = {}  # Add any necessary query parameters
         querystring = {"location": "brandywine"}
         url = "https://zotmeal-backend.vercel.app/api"
         headers = {"User-Agent": "insomnia/8.6.0"}

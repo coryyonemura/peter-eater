@@ -54,6 +54,3 @@ if __name__ == "__main__":
     # Commit changes and close the connection
     db.commit()
     close_connection(db)
-
-
-

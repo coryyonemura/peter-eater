@@ -91,26 +91,36 @@ interface MenuItem {
   foods: any[]
 }
 
-export default function MenuComponent({ navigation }: { navigation: any }) {
+export default function MenuComponent({
+  navigation,
+  route,
+}: {
+  navigation: any
+  route: any
+}) {
   const [menu, setMenu] = useState<MenuItem[]>([])
+  const { location } = route.params
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/receive_data')
+        const response = await fetch(
+          `http://localhost:5000/receive_data?location=${location}`
+        )
+
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`)
         }
+
         const data = await response.json()
-        console.log(data)
         setMenu(data)
       } catch (error) {
-        console.error(error)
+        console.error('Error fetching:', error)
       }
     }
 
     fetchData()
-  }, [])
+  }, [location])
 
   return (
     <ScrollView>

@@ -1,11 +1,17 @@
-import { Button } from 'react-native'
+import { Button, View } from 'react-native'
 
 const HomeScreen = ({ navigation }: { navigation: any }) => {
   return (
-    <Button
-      title="Welcome"
-      onPress={() => navigation.navigate('Menu', { name: 'Jane' })}
-    />
+    <View>
+      <Button
+        title="Anteatery"
+        onPress={() => navigation.navigate('Menu', { location: 'anteatery' })}
+      />
+      <Button
+        title="Brandywine"
+        onPress={() => navigation.navigate('Menu', { location: 'brandywine' })}
+      />
+    </View>
   )
 }
 

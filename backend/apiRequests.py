@@ -8,8 +8,10 @@ CORS(app)
 @app.route('/receive_data', methods=['GET'])
 def receive_data():
     try:
+        location = request.args.get('location', 'brandywine')
+        
         # Make a request to get JSON data
-        querystring = {"location": "brandywine"}
+        querystring = {"location": location}
         url = "https://zotmeal-backend.vercel.app/api"
         headers = {"User-Agent": "insomnia/8.6.0"}
 

@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import { Text, View } from '../components/Themed'
 
-// make into a constant 
+// make into a constant
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     width: '80%',
   },
 })
-
 
 export default function Home() {
   return (

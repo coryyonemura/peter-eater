@@ -6,7 +6,7 @@
 
 ## Inspiration
 
-Every day is plagued with constant argument with our hallmates over which dining hall we are going to eat at for the night. To put an end to this turmoil, we wanted to create an app that objectively shows which dining hall students think is best. 
+Every day is plagued with constant argument with our hallmates over which dining hall we are going to eat at for the night. To put an end to this turmoil, we wanted to create an app that objectively shows which dining hall students think is best.
 
 ## What it does
 
@@ -32,9 +32,8 @@ How to collaborate effectively! Got more acquainted with Git, and exposed to sev
 
 We are planning on implementing several features soon.
 
-* Calendar Archive: See past ratings and comments of any meal and compare the dining halls over time.
+- Calendar Archive: See past ratings and comments of any meal and compare the dining halls over time.
 
-* Image Upload: Upload pictures of your food with your ratings and comments.
+- Image Upload: Upload pictures of your food with your ratings and comments.
 
-* Reactions and Voting: React to other students’ feedback with emojis and votes.
-
+- Reactions and Voting: React to other students’ feedback with emojis and votes.

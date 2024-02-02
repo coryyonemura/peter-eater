@@ -20,7 +20,7 @@ function FoodDisplay({ foodName }: { foodName: string }) {
       <ScrollView>
         <TouchableOpacity
           onPress={() => console.log(`pressed ${foodName}`)}
-          style={[styles.item, styles.itemTouchable]}
+          style={[styles.foodItem, styles.itemTouchable]}
         >
           <Text style={styles.title}>{foodName}</Text>
         </TouchableOpacity>

@@ -1,25 +1,29 @@
-import { StatusBar, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 import { uciColors } from './Colors'
 
 export const styles = StyleSheet.create({
     container: {
+        alignItems: 'center',
         flexDirection: 'row',
-        width: 500,
-        paddingTop: StatusBar.currentHeight,
-        marginHorizontal: 16,
+        justifyContent: 'center',
+        width: 'auto',
+        flex: 1,
+        paddingLeft: 20,
+        paddingRight: 20,
     },
-    item: {
+    foodItem: {
         backgroundColor: uciColors.uciBlue,
         padding: 20,
         fontSize: 22,
         marginVertical: 8,
-        maxWidth: '100%',
-        maxHeight: '65%',
-        justifyContent: 'center',
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
+    },
+    item: {
+        backgroundColor: uciColors.uciBlue,
+        padding: 16,
+        margin: 1,
+        fontSize: 22,
+        marginVertical: 8,
     },
     header: {
         fontSize: 32,
@@ -33,8 +37,8 @@ export const styles = StyleSheet.create({
     },
     itemTouchable: {
         flex: 1,
-        width: '100%',
         borderRadius: 10,
+        padding: 16,
         overflow: 'hidden',
     },
     box: {

@@ -3,7 +3,7 @@ import { styles } from '../constants/Styles'
 
 const HomeScreen = ({ navigation }: { navigation: any }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <TouchableOpacity
         onPress={() => navigation.navigate('Menu', { location: 'anteatery', title: 'The Anteatery' })}
         style={[styles.item, styles.itemTouchable]}

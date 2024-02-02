@@ -55,7 +55,7 @@ export default function MenuComponent({
 }) {
   const [menu, setMenu] = useState<MenuItem[]>([])
   const [loading, setLoading] = useState(true)
-  const { location } = route.params
+  const { location, title } = route.params
   const URL = 'http://localhost:5000/receive_data?location='
 
   useEffect(() => {
@@ -78,6 +78,12 @@ export default function MenuComponent({
 
     fetchData()
   }, [location])
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: `${title} Menu`,
+    })
+  }, [title, navigation])
 
   return (
     <ScrollView>

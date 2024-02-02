@@ -5,13 +5,13 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
   return (
     <View>
       <TouchableOpacity
-        onPress={() => navigation.navigate('Menu', { location: 'anteatery' })}
+        onPress={() => navigation.navigate('Menu', { location: 'anteatery', title: 'The Anteatery' })}
         style={[styles.item, styles.itemTouchable]}
       >
         <Text style={styles.title}>Anteatery</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigation.navigate('Menu', { location: 'brandywine' })}
+        onPress={() => navigation.navigate('Menu', { location: 'brandywine', title: 'Brandywine' })}
         style={[styles.item, styles.itemTouchable]}
       >
         <Text style={styles.title}>Brandywine</Text>

@@ -1,5 +1,7 @@
 import { StatusBar, StyleSheet } from 'react-native'
 
+import { uciColors } from './Colors'
+
 export const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
@@ -8,7 +10,7 @@ export const styles = StyleSheet.create({
         marginHorizontal: 16,
     },
     item: {
-        backgroundColor: '#0064a4',
+        backgroundColor: uciColors.uciBlue,
         padding: 20,
         fontSize: 22,
         marginVertical: 8,

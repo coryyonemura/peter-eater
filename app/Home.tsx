@@ -1,24 +1,5 @@
-import { StyleSheet } from 'react-native'
-
 import { Text, View } from '../components/Themed'
-
-// make into a constant
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-})
+import { styles } from '../constants/Styles'
 
 export default function Home() {
   return (

@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react'
 import {
+  ActivityIndicator,
   Text,
   View,
   ScrollView,
   TouchableOpacity,
-  Button,
 } from 'react-native'
 
 import { styles } from '../constants/Styles'
 
-export function FoodDisplay({ foodName }: { foodName: string }) {
+interface MenuItem {
+  station: string
+  foods: any[]
+}
+
+function FoodDisplay({ foodName }: { foodName: string }) {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -24,7 +29,7 @@ export function FoodDisplay({ foodName }: { foodName: string }) {
   )
 }
 
-export function StationDisplay({
+function StationDisplay({
   stationName,
   foods,
 }: {
@@ -41,11 +46,6 @@ export function StationDisplay({
   )
 }
 
-interface MenuItem {
-  station: string
-  foods: any[]
-}
-
 export default function MenuComponent({
   navigation,
   route,
@@ -54,14 +54,14 @@ export default function MenuComponent({
   route: any
 }) {
   const [menu, setMenu] = useState<MenuItem[]>([])
+  const [loading, setLoading] = useState(true)
   const { location } = route.params
+  const URL = 'http://localhost:5000/receive_data?location='
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:5000/receive_data?location=${location}`
-        )
+        const response = await fetch(`${URL}${location}`)
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`)
@@ -71,6 +71,8 @@ export default function MenuComponent({
         setMenu(data)
       } catch (error) {
         console.error('Error fetching:', error)
+      } finally {
+        setLoading(false)
       }
     }
 
@@ -79,17 +81,19 @@ export default function MenuComponent({
 
   return (
     <ScrollView>
-      <Button
-        title="Rate"
-        onPress={() => navigation.navigate('Review', { name: 'Rate' })}
-      />
-      {menu.map((item) => (
-        <StationDisplay
-          key={item.station}
-          stationName={item.station}
-          foods={item.foods}
-        />
-      ))}
+      {loading && <ActivityIndicator size="large" />}
+      {/* <Button */}
+      {/*   title="Rate" */}
+      {/*   onPress={() => navigation.navigate('Review', { name: 'Rate' })} */}
+      {/* /> */}
+      {!loading &&
+        menu.map((item) => (
+          <StationDisplay
+            key={item.station}
+            stationName={item.station}
+            foods={item.foods}
+          />
+        ))}
     </ScrollView>
   )
 }

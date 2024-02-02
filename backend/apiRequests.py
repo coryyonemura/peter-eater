@@ -16,6 +16,7 @@ def receive_data():
         headers = {"User-Agent": "insomnia/8.6.0"}
 
         response = requests.get(url, headers=headers, params=querystring)
+        response.encoding = 'utf-8'
         data = response.json()  # Assuming the response is JSON
 
         # Your parsing logic
